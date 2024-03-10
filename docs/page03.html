@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body{
+                video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    min-width: 100%;
+                    min-height: 100%;
+                    z-index:-100;
+                  }   
+            }
+        </style>
+        <script>
+            function validateRegistrationForm() {
+                var username = document.getElementById('Username').value;
+                var password = document.getElementById('Password').value;
+                var confirmPassword = document.getElementById('ConfirmPassword').value;
+                var email = document.getElementById('email').value;
+                var mobileNumber = document.getElementById('MobileNumber').value;
+                var emailRegex = /[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var mobileRegex = /[6-9]\d{9}$/;
+                if (username.length < 6) {
+                    alert('Username must be at least 6 characters.');
+                    return false;
+                }
+                else if (password.length < 8) {
+                    alert('Password must be at least 8 characters.');
+                    return false;
+                }
+                else if (password !== confirmPassword) {
+                    alert('Password and Confirm Password must match.');
+                    return false;
+                }
+                else if (!emailRegex.test(email)) {
+                    alert('Invalid email format.');
+                    return false;
+                }
+                else if (!mobileRegex.test(mobileNumber)) {
+                    alert('Invalid mobile number format.');
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit= "return validateRegistrationForm()">
+            <video autoplay muted loop>
+                <source src="reg.mp4" type="video/mp4">
+            </video>
+            Username:&nbsp;<input type="text" id="Username" name="Username"  required><br><br>
+            Password:&nbsp;<input name="Password" id="Password" name="Password" required><br><br>
+            ConfirmPassword:&nbsp;<input type="password" id="ConfirmPassword" name="ConfirmPassword" required><br><br>
+            Email-id:&nbsp;<input type="email" id="email" name="email" required><br><br>
+            MobileNumber:&nbsp;<input type="tel" id="MobileNumber" name="MobileNumber" required><br><br>
+            Date of Birth:&nbsp;<input type="date" id="dob" name="dob" required><br><br>
+            Address:&nbsp;<textarea type="address" id="Address" name="Address"></textarea><br><br>
+            Gender:&nbsp;<select id="Gender" name="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            </select><br><br>
+            <button type="submit">Submit</button>
+            </form>
+            </body>
+    </body>
+</html>
+   
