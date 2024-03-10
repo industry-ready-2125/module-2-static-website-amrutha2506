@@ -1,1 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Form</title>
+        <style>
+            body{
+                video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    min-width: 100%;
+                    min-height: 100%;
+                    z-index:-100;
+                  }   
+            }
+        </style>
+        <script>
+            function validateLoginForm() {
+                var Username = document.getElementById('Username').value;
+                var Password = document.getElementById('Password').value;
+    
+                // Validate username and password constraints
+                if (username.length < 5 || password.length < 8) {
+                    alert('Username must be at least 5 characters and password must be at least 8 characters.');
+                    return false;
+                }
+    
+                // Additional constraints if needed...
+    
+                return true;
+            }
+        </script>
+
+    </head>
+    <body>
+        <form onsubmit="return validateLoginForm()"></form>
+            <video autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+            </video>
+            Username : <input type="text" Placeholder="Enter Username" required/>
+            <br><br>
+            Email :   <input type="email" placeholder="Enter Email" required/>
+            <br><br>
+            Password : <input type=password  name=pword Placeholder="Enter Password" required/>
+            <br><br>
+            <button type="submit">Submit</button><br><br>
+            <h3>NEW USERS</h3>
+            <a href="Registration.html" target="right">Sign Up</a> 
+            <h3>Forgot Password</h3> 
+            <a href="ForgotPassword.html" target="right">Forgot Password</a>
+        </form>
+    </body>
+</html>
 
